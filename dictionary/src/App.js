@@ -3,6 +3,7 @@ import Register from './components/Forms/Cadastro/Register.js';
 import Login from './components/Forms/Login/Login.js';
 import './App.css';
 import History from './components/History/History.js';
+import Main from './components/Main/Main.js';
 
 
 
@@ -13,7 +14,8 @@ function App() {
       <h1>Dictionary</h1>
       {/* <Register />
       <Login /> */}
-      <History />
+      {/* <History /> */}
+      <Main />
     </div>
   );
 }
