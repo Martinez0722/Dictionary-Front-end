@@ -19,10 +19,12 @@ const History = () => {
     console.log(words)
   return (
     <div className="History">
-        <h1>History</h1>
-        <ul>{words.map((word)=>(
-            <li key={word.id}>{word.word}</li>
-        ))}</ul>
+        <table>
+            <ul>{words.map((word)=>(
+                <li key={word.id}>{word.word}</li>
+                ))}
+            </ul>
+        </table>
     </div>
   )
 }

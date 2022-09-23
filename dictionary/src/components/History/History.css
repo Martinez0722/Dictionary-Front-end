@@ -2,13 +2,26 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    
 }
 
 
 .History{
-    width: 500px;
+    width: 40vw;
     height: 300px;
     background-color: green;
+    margin-top: 30vh;
+    
+
+}
+
+ul{
     display: flex;
+       
+}
+li{
     flex-direction: row;
+    border: 1px solid black;
+    list-style: none;
+    padding: 2px;
 }
