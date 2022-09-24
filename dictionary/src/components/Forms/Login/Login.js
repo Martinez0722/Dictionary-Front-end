@@ -1,19 +1,33 @@
 import { useState } from "react"
 import "./Login.css"
 
+const url ="http://localhost:3030/auth/signin"
+
 
 
 const Login = () => {
     const [email, setEmail] = useState()
     const [senha, setSenha] = useState()
 
-    const handleSubmit = (event) =>{
+    const handleSubmit = async (event) =>{
         event.preventDefault();
-        console.log("Enviando o formulário")
+        const login ={
+            email,
+            senha
+        };
+
+        const res = await fetch(url,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(login)
+        })
+        
     }
 
 return (
-    <div>
+    <div className="Login">
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
             <div>

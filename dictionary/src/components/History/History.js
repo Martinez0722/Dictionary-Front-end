@@ -1,10 +1,14 @@
 import "./History.css"
 import { useState, useEffect } from "react"
+import {Table, TableContainer, TableBody, TableCell, TableRow} from "@mui/material"
+import { useSearch } from "../../hooks/useSearch";
 
-const url ='http://localhost:3030/history';
+const url ='http://localhost:3030/list';
+
 
 const History = () => {
     const [words, setWord] = useState([])
+    
 
     useEffect(() => {
         async function fetchData(){
@@ -17,14 +21,19 @@ const History = () => {
         fetchData();
     },[]);
     console.log(words)
+    
+    
   return (
     <div className="History">
-        <table>
-            <ul>{words.map((word)=>(
-                <li key={word.id}>{word.word}</li>
+        <TableContainer className="TableContainer">
+            <Table>
+                {words.map(word=>(
+                <TableRow key={word.id}>
+                    <TableCell>{word.word}</TableCell>
+                </TableRow>
                 ))}
-            </ul>
-        </table>
+            </Table>
+        </TableContainer>
     </div>
   )
 }

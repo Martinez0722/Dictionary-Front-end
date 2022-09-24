@@ -1,17 +1,33 @@
 import { useState } from 'react'
 import './Register.css'
 
+
+const url = "http://localhost:3030/auth/signup"
+
 const Register = () => {
-    const [email, setEmail] = useState()
-    const [senha, setSenha] = useState()
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
 
-    const handleSubmit = (event) =>{
+    const handleSubmit = async (event) =>{
         event.preventDefault();
-        console.log("Enviando o formulário")
-    }
+        const cadastro ={
+            email,
+            senha
+        };
 
+        const res = await fetch(url,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(cadastro)
+        })
+        alert("Cadastro, Realizado")
+        
+    }
+   
 return (
-    <div>
+    <div className='Cadastro'>
         <h1>Cadastre-se</h1>
         <form onSubmit={handleSubmit}>
             <div>
@@ -22,7 +38,10 @@ return (
 
                     <span>senha</span>
 
-                    <input type="password" name='senha' placeholder='digite sua senha' onChange={(e)=> setSenha(e.target.value)} />
+                    <input type="password" 
+                        name='senha' 
+                        placeholder='digite sua senha' 
+                        onChange={(e)=> setSenha(e.target.value)} />
                 </label>
             </div>
             <input type="submit" value='Enviar' />

@@ -2,7 +2,21 @@ import "./Main.css"
 
 const Main = () => {
   return (
-    <div><h1>Main</h1></div>
+  <div className="Main">
+    <div className="word">
+      <p>Word</p>
+      <p>fonetica</p>
+    </div>
+
+    <div className="player">
+      <p>player</p>
+    </div>
+    <div className="buttons">
+      <button value={'Voltar'}></button>
+      <button value={'Proximo'}></button>
+
+    </div>
+  </div>
   )
 }
 

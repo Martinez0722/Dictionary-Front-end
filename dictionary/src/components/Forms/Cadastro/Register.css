@@ -1,12 +1,17 @@
-form{
-    width: 500px;
-    margin:0 auto;
-    text-align: left;
+.Cadastro{
+    border-top:1px solid #000
 }
 
-input,
-textarea,
-select{
-    display: block;
-    margin-top: 10px;
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:15px;
+
 }
