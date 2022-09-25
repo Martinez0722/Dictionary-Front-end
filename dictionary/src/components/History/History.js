@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import {Table, TableContainer, TableBody, TableCell, TableRow} from "@mui/material"
 import { useSearch } from "../../hooks/useSearch";
 
-const url ='http://localhost:3030/list';
+const url ='http://localhost:3030/history';
 
 
 const History = () => {
@@ -24,8 +24,8 @@ const History = () => {
     
     
   return (
-    <div className="History">
-        <TableContainer className="TableContainer">
+    <div className="History col-12">
+        <TableContainer className="TableContainer col-6">
             <Table>
                 {words.map(word=>(
                 <TableRow key={word.id}>
